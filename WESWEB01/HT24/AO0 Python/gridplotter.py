@@ -70,8 +70,18 @@ midPoint = dataRange//2
 
 for list in range(len(data)):
     for num in range(len(data[list])):
-        if list  > 3 and list < 8:
-            data[list][num] = 1
+
+        if num  > 3 and num < 8 or list > 3 and list < 8:
+            if list == 0 or list == len(data)-1 or num == 0 or num == len(data)-1:
+                data[list][num] = 1
+
+        if num < 10 and num > 1 and num != midPoint or list < 10 and list > 1 and list != midPoint:
+            if list != 0 and list != 11 and num != 0 and num != 11 and list != 5 and num != 5 and list != 6 and num != 6:
+                    data[list][num] = 1
+        
+        if list > 6 and list <10:
+            if num > 6 and num < 9:
+                data[list][num] = 0
 # ---------------------
 
 grid = np.array(data)
