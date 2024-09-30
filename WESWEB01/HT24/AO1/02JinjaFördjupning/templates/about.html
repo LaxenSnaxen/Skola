@@ -1,19 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Company - About Us</title>
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/about">About</a> |
-        <a href="/advice">Advice Generator</a> |
-        <a href="/products">Products</a>
-    </nav>
+{% extends 'base.html' %}
+
+{% block title %}My Company - About Us{% endblock %}
+
+{% block content %}
     <h1>About Us</h1>
     {% for member in team_members %}
         <h2>{{ member.name }} - {{ member.title }}</h2>
         <p>{{ member.bio }}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}

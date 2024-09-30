@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Company - Advice Generator</title>
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/about">About</a> |
-        <a href="/advice">Advice Generator</a> |
-        <a href="/products">Products</a>
-    </nav>
+{% extends 'base.html' %}
+
+{% block title %}My Company - About Us{% endblock %}
+
+{% block content %}
     <h1>Advice Generator</h1>
     <form method="post">
         <button type="submit">Get Advice</button>
@@ -17,5 +10,4 @@
     {% if advice %}
         <p>{{ advice }}</p>
     {% endif %}
-</body>
-</html>
+{% endblock %}

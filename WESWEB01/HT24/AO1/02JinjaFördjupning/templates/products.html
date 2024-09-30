@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Company - About Us</title>
-</head>
-<body>
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/about">About</a> |
-        <a href="/advice">Advice Generator</a> |
-        <a href="/products">Products</a>
-    </nav>
+{% extends 'base.html' %}
+
+{% block title %}My Company - About Us{% endblock %}
+
+{% block content %}
     <h1>Our Products</h1>
     {% for product in productLineUp %}
         <h2><u>{{ product.name }}</u></h2>
         <p>{{ product.description }}</p>
         <p>Pris: {{ product.price}}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
