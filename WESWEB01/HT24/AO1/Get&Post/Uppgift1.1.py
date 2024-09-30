@@ -20,7 +20,6 @@ def calculate():
 
 @app.route("/dice", methods=['GET', 'POST'])
 def dice():
-    #return f"<p>You rolled: {random.randrange(1, 7)}</p>"
     if request.method == 'POST':
         number = int(request.form['number'])
         number1 = int(request.form['number1'])
@@ -43,5 +42,6 @@ def password():
         return render_template('passwordResult.html', password=password)
     else:
         return render_template('passwordGenerator.html')
+
 if __name__ =='__main__':  
-    app.run(debug = True)
+    app.run(debug = True, port=5555)

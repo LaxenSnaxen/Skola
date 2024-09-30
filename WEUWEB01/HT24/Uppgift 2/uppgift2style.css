@@ -1,0 +1,32 @@
+html
+{
+    background-color: lightslategrey;
+}
+
+body
+{
+    background-color: azure;
+    font-family: sans-serif;
+}
+
+h1
+{
+    color: purple;
+    text-align: center;
+}
+
+div
+{
+    border: 1px solid purple;
+    border-radius: 15px;
+}
+
+.bob
+{
+    color: darkred;
+}
+
+.billy
+{
+    color: darkgreen;
+}

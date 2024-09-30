@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Company{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/advice">Advice Generator</a> |
+        <a href="/products">Products</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -90,7 +90,7 @@ int main() {
     angela.greet();
     jacob.greet();
     ted.greet();
-    cin.get();
+    cin.get();  
 
     return 0;
 }
