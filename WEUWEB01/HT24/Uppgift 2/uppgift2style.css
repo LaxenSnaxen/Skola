@@ -1,13 +1,18 @@
 html
 {
     background-color: lightslategrey;
+
 }
+
 
 body
 {
     background-color: azure;
     font-family: sans-serif;
+    max-width: 600px;
+    margin: auto;
 }
+
 
 h1
 {
@@ -21,12 +26,34 @@ div
     border-radius: 15px;
 }
 
-.bob
+#bob
+{
+    color: darkgreen;
+}
+
+.two
+{
+    font-size: larger;
+}
+.three
+{
+    font-size: smaller;
+}
+
+#billy
 {
     color: darkred;
 }
 
-.billy
+#bob .two a
 {
-    color: darkgreen;
+    color:gold;
+    text-decoration: underline overline;
+}
+
+
+
+#bob a
+{
+    text-decoration: line-through;
 }
