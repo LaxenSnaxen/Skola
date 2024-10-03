@@ -4,7 +4,7 @@ body
 {
     margin: auto;
     max-width: 860px;
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", "Liberation Sans", Calibri, Arial, sans-serif;
     font-size: 100%;
 }
 
@@ -89,4 +89,38 @@ html
 {
     text-decoration: underline;
     color: #FF4900;
+}
+
+h1
+{
+    font-family: 'Merienda One', cursive;
+}
+
+.menu h2
+{
+    font-family: 'Merienda One', cursive;
+}
+
+h1::first-letter
+{
+    color: #00AF64;
+}
+
+.startpage .logo
+{
+    width: 235px;
+    height: 198px
+}
+
+.hwrap
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+hwrap > a 
+{
+    margin-right: 30px;
 }
