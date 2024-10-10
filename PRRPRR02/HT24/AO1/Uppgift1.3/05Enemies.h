@@ -5,12 +5,18 @@
 
 using namespace std;
 
-class Goblin {
-public:
-    int health;
-    int damage;
+class enemy
+{
+    public:
+        int health;
+        int damage;
 
-    Goblin(int h, int d) : health(h), damage(d) {}
+        enemy(int h, int d) : health(h), damage(d) {}
+};
+
+class Goblin : public enemy{
+public:
+    Goblin(int h, int d) : enemy(h, d) {}
 
     void attack() {
         cout << "Goblin attacks, dealing " << damage << " damage." << endl;
@@ -22,13 +28,11 @@ public:
     }
 };
 
-class Dragon {
+class Dragon : public enemy{
 public:
-    int health;
-    int damage;
     bool breathFire;
 
-    Dragon(int h, int d, bool b) : health(h), damage(d), breathFire(b) {}
+    Dragon(int h, int d, bool b) : enemy(h, d), breathFire(b) {}
 
     void attack() {
         cout << "Dragon attacks, dealing " << damage << " damage." << endl;
