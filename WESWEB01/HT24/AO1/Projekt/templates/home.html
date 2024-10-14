@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+
+{% block title %}My Company - About Us{% endblock %}
+
+{% block content %}
+
+    <h1>Welcome, {{ name }}</h1>
+    <h2>Your To-Do list</h2>
+    <p>Add a new Item</p>
+
+    <form method="post">
+        <p>Item: <Input type="text" name="item" placeholder="Item"></p>
+        <p>Description: <input type="text" name="desc" placeholder="Description"></p>
+    </form>
+
+{% endblock %}
