@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import json
 
 app = Flask(__name__)
+app.secret_key = 'MuBC1EstEby8rRH6Td2J'
 
 @app.route('/')
 def home():
@@ -22,6 +23,7 @@ def logIn():
         with open('WESWEB01\HT24\AO1\Projekt\static/test.json', 'r') as openFile:
             file = json.load(openFile)
             if email in file:
+                print(f"EMAIL VARIABLE: {email}")
                 if email["password"] == password:
                     print ('Credentials valid.')
                     session["username"] = email["username"]
