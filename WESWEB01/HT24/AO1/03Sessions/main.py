@@ -2,21 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import csv
 from pathlib import Path
 
-p = Path(__file__).with_name('users.csv')
-
-user = {}
-
-with open(p, newline='') as csvfile:
-
-    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-
-    for row in spamreader:
-        print (row[0])
-        for username, password in row[0].split(","):
-            newUserDict ={**user, user: password}
-            user = newUserDict
-    print (user)
-
 app = Flask(__name__)
 app.secret_key = 'MuBC1EstEby8rRH6Td2J'
 
@@ -29,11 +14,7 @@ def login():
     
     counter += 1
 
-    session["counter"] = counter
-
-    secretUsers = ["admin", "bob", "john", "sarah"]
-    secretPasswords = {"admin": "1234", "bob": "xyzw", "john": "asdf", "sarah": "9876"}
-    
+    session["counter"] = counter    
 
     print(f"Användaren har kollat {counter} gånger.")
     print(session)
@@ -41,11 +22,18 @@ def login():
         username = request.form['username']
         password = request.form['password']
         session["username"] = username
-        if username in secretUsers and password == secretPasswords[username]:
-            session['logged_in'] = True
-            return redirect(url_for('secret'))
-        else:
-            return "Invalid credentials. Please try again.", 401
+
+        with open('users.csv', newline='') as csvfile:
+
+            data = csv.reader(csvfile, delimiter=' ', quotechar='|')
+            dataPoint = f"{username},{password}"
+            print (dataPoint)
+            for row in data:
+                if dataPoint in row:
+                    session['logged_in'] = True
+                    return redirect(url_for('secret'))
+                else:
+                    return "Invalid credentials. Please try again.", 401
     else:
         if session.get('logged_in'):
             return "You are already logged in!", 200
@@ -73,6 +61,20 @@ def superSecret():
         return render_template('superSecret.html')
     else:
         return redirect(url_for('login'))
+    
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+        if request.method == "POST":
+            username = request.form["username"]
+            password = request.form["password"]
+            
+            with open('users.csv', 'w', newline='') as file:
+                writer = csv.writer(file, delimiter=",")
+                writer.writerow([username, password])
+
+            return ("User registered!")
+        else:
+            return render_template('register.html')
 
 
 if __name__ == '__main__':
