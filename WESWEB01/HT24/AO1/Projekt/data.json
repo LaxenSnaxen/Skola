@@ -1,0 +1,27 @@
+{
+    "test.testsson@test.com": {
+        "username": "Test Testsson",
+        "password": "test123",
+        "list": {}
+    },
+    "user.usersson@user.com": {
+        "username": "User Usersson",
+        "password": "user123",
+        "list": {}
+    },
+    "bob@bob.com": {
+        "username": "Bob Bobsson",
+        "password": "bob123",
+        "list": {}
+    },
+    "scooby.doo@mystery.com": {
+        "username": "Raggy",
+        "password": "RaggyDoo123DoDo",
+        "list": {
+            "Rooby racks": "ret rom rooby racks",
+            "Rash raggy": "rash raggy, re's rery rirty",
+            "Remove re riles": "relma rever rexisted",
+            "Remember": "ride re rody"
+        }
+    }
+}

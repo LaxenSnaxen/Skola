@@ -1,70 +1,51 @@
 #include <iostream>
-#include <string>
 #include <vector>
 
 using namespace std;
 
-void convertToInitial(string *name)
-{
-    (*name) = (*name)[0];
-}
-
 int main()
 {
-    string jacob = "Jacob";
-    convertToInitial(&jacob);
-    cout << jacob << endl;
-
-    // Skapa en variabel, den heter x.
-    int x = 20;
-
-    cout << "Värdet är: " << x << endl;
-
-    // Pointer: Adress till data.
-    // När man skapar: Datatyp stjärna.
-    // När man bestämmer adress: och-tecken och vilken variabel.
-    int *p = &x;
-
-    cout << "P värdet: " << p << endl;
-
-    // Detta hämtar vad adressen innehåller och inte vad adressen är.
-    cout << "Värdet som p pekar åt: " << *p << endl;
-
-    // Arrays.
-    int numbers[] = {2, 4, 6, 8};
-    //               0, 1, 2, 3
-
-    cout << numbers[0] << endl;
-
-    // Pointer till en array, notera att man inte behöver ett och-tecken.
-    // q är int hela array'en, utan det första värdet.
-    int *q = numbers;
-    int *t = q + 1;
-    q = q + 2;
-    cout << *t << endl;
-
-    // Vektorer
-    vector<int> betterNumbers 
-    {
-        2, 4, 6, 8
-    };
-
-    // Kan ändra och hämta saker som en vanlig array.
-    betterNumbers[2] = 5;
-
-    // Nu kan vi även lägga till saker i efterhand.
-
-    betterNumbers.push_back(13);
-
-    betterNumbers.insert(betterNumbers.begin() + 2,-1);
+    // TODO: Skapa en vector för alla ord i namnet.
     
-
-    cout << "Alla siffror: " << betterNumbers.size() << " st" <<  endl;
-    // For x in, loopa över alla saker i en lista.
-    for(int x : betterNumbers)
-    {
-        cout << x << endl;
+    // Skriv ut instruktioner.
+    cout << "Skriv ditt namn, ett ord i taget." << endl;
+    cout << "Du kan avsluta genom att trycka på ENTER." << endl;
+    
+    // Loop som ska hämta in alla ord, ett i taget,
+    // tills användaren avslutar.
+    vector <string> name = {};
+    string npart;
+    while(true) {
+        getline(cin, npart);
+        name.push_back(npart);
+        // TODO: Lägg till ordet i vectorn.
+        // Om användaren däremot trycker på ENTER igen, alltså
+        // har gett hela namnet, ska vi då avsluta istället.
+        if (npart == "\0")
+            {
+                break;
+            }
     }
+    
+    cout << "Ditt fullständiga namn är: " << endl;
+    // TODO: Skriv ut användarens fullständiga namn.
+    
+    for (auto & element : name) 
+    {
+        cout << element << " "; 
+    }
+
+    cout << endl;
+
+    cout << "Dina initialer är: " << endl;
+    // TODO: Skriv ut användarens initialer.
+
+    for (auto & element : name) 
+    {
+        cout << element[0]; 
+    }
+
+    cout << endl;
 
     return 0;
 }
