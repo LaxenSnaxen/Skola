@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import json
+import random
 
 app = Flask(__name__)
 app.secret_key = 'MuBC1EstEby8rRH6Td2J'
@@ -19,7 +20,10 @@ def home():
 
             with open('data.json', 'r') as openFile:
                 file = json.load(openFile)
-                file[session["email"]]["list"].update({item: desc})
+                id = (random.randint(0,9999))
+                while id in file:
+                    id = (random.randint(0,9999))
+                file[session["email"]]["list"].update({item: [desc, id]})
 
                 print(session["todoLists"])
                 print(session["username"])
@@ -34,7 +38,7 @@ def home():
         else:
             with open('data.json', 'r') as openFile:
                 file = json.load(openFile)
-                return render_template("home.html", username="Raggy", loggedIn=True, lists=file[session["email"]]["list"])
+                return render_template("home.html", username=session["username"], loggedIn=True, lists=file[session["email"]]["list"])
 
 
 
@@ -79,10 +83,14 @@ def register():
         username = request.form["username"]
         password = request.form["password"]
 
+        id = (random.randint(0,9999))
+        while id in file:
+            id = (random.randint(0,9999))
+
         newDict = {
             'username': username,
             'password': password,
-            'list': {"Item": "Desc"}
+            'list': {"Item": ["Desc", id]}
         }   
         with open('data.json', 'r') as openFile:
             file = json.load(openFile)
@@ -109,7 +117,10 @@ def delete(item):
     print(type(item))
     with open('data.json', 'r') as openFile:
                 file = json.load(openFile)
-                file[session["email"]]["list"].pop(item)
+                diction = file[session["email"]]["list"]
+                for title, list in diction:
+                    print (f"Title: {title}, List: {list}")
+                #file[session["email"]]["list"].pop(item)
 
     with open('data.json', 'w') as outFile:
         outFile.write(json.dumps(file, indent=4))

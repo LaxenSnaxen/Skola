@@ -18,10 +18,21 @@
         "username": "Raggy",
         "password": "RaggyDoo123DoDo",
         "list": {
-            "Rooby racks": "ret rom rooby racks",
-            "Rash raggy": "rash raggy, re's rery rirty",
-            "Remove re riles": "relma rever rexisted",
-            "Remember": "ride re rody"
+            "Rooby Racks": [
+                "get som scooby snacks",
+                6206
+            ],
+            "dfas": [
+                "dfasdfafafs",
+                3588
+            ]
+        }
+    },
+    "asdf@asdf.com": {
+        "username": "asdf",
+        "password": "asdf",
+        "list": {
+            "Item": "Desc"
         }
     }
 }

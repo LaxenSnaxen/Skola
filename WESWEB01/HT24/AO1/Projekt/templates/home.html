@@ -7,7 +7,7 @@
     <h1>Welcome, {{ username }}</h1>
     <h2>Your To-Do list</h2>
     {% for item in lists %}
-    <p><b>{{ item }}:</b> <input type="checkbox" name="checked"> {{ lists[item] }} <a href={{"/delete/" ~ item }}>Delete</a></p>
+    <p><b>{{ item }}:</b> <input type="checkbox" name="checked"> {{ lists[item][0] }} <a href={{"/delete/" ~ lists[item][1] }}>Delete</a></p>
     {% endfor %}
     <p>Add a new Item</p>
 

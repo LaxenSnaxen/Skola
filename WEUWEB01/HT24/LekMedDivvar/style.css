@@ -1,0 +1,27 @@
+.header
+{
+    background-color: purple;
+    color: gold;
+    padding: 2em;
+    text-align: center;
+}
+
+.article
+{
+    margin: 15px;
+    padding: 20px;
+    border: 2px solid gold;
+}
+.nav
+{
+    margin: 15px;
+    padding: 5px;
+    border: 2px solid gold; 
+}
+
+.footer
+{
+    width: 100%;
+    text-align: center;
+    border: 2px solid gold;
+}
