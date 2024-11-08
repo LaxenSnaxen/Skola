@@ -38,7 +38,7 @@ def home():
         else:
             with open('data.json', 'r') as openFile:
                 file = json.load(openFile)
-                return render_template("home.html", username=session["username"], loggedIn=True, lists=file[session["email"]]["list"])
+                return render_template("home.html", username=session["username"], loggedIn=session.get("loggedIn"), lists=file[session["email"]]["list"])
 
 
 
@@ -113,18 +113,32 @@ def logout():
 
 @app.route ('/delete/<item>')
 def delete(item):
-    print(item)
-    print(type(item))
+    print(f"ID: {item}")
     with open('data.json', 'r') as openFile:
                 file = json.load(openFile)
                 diction = file[session["email"]]["list"]
-                for title, list in diction:
-                    print (f"Title: {title}, List: {list}")
-                #file[session["email"]]["list"].pop(item)
+                print(diction)
+                for title in diction:
+                    print (f"Title: {title}, ID: {diction[title][1]}")
+                    print (diction[title][1])
+                    print(type(item))
+                    print(type(diction[title][1]))
+                    if (diction[title][1]) == int(item):
+                        print (file[session["email"]]["list"])
+                        del (file[session["email"]]["list"])[title]
+                        print (file[session["email"]]["list"])
+                        break
+  
 
     with open('data.json', 'w') as outFile:
         outFile.write(json.dumps(file, indent=4))
         return redirect(url_for("home"))
+
+@app.route ('/about')
+def about():
+    session.get("loggedIn")
+    print (session.get("loggedIn"))
+    return render_template("about.html", loggedIn=session.get("loggedIn"))
 
 if __name__ == '__main__':
     app.run(debug=True, port=9999)
