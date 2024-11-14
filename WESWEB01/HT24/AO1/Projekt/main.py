@@ -82,10 +82,13 @@ def register():
         email = request.form["email"]
         username = request.form["username"]
         password = request.form["password"]
+        
+        with open('data.json', 'r') as openFile:
+            file = json.load(openFile)
 
-        id = (random.randint(0,9999))
-        while id in file:
             id = (random.randint(0,9999))
+            while id in file:
+                id = (random.randint(0,9999))
 
         newDict = {
             'username': username,

@@ -1,19 +1,4 @@
 {
-    "test.testsson@test.com": {
-        "username": "Test Testsson",
-        "password": "test123",
-        "list": {}
-    },
-    "user.usersson@user.com": {
-        "username": "User Usersson",
-        "password": "user123",
-        "list": {}
-    },
-    "bob@bob.com": {
-        "username": "Bob Bobsson",
-        "password": "bob123",
-        "list": {}
-    },
     "scooby.doo@mystery.com": {
         "username": "Raggy",
         "password": "RaggyDoo123DoDo",
@@ -21,14 +6,63 @@
             "Remember": [
                 "ride re rody",
                 7479
+            ],
+            "Rash raggy": [
+                "rash raggy, re's rery rirty",
+                8185
+            ],
+            "Do the deed": [
+                "Rill de prerident",
+                4736
+            ],
+            "Buy rorheries": [
+                "ret rom rooby racks",
+                8549
+            ],
+            "Ro wif re rang": [
+                "runt rom rhosts",
+                2882
             ]
         }
     },
-    "asdf@asdf.com": {
-        "username": "asdf",
-        "password": "asdf",
+    "emil.bonevnilsson@elev.ga.ntig.se ": {
+        "username": "Emil Bonev Nilsson",
+        "password": "1234",
         "list": {
-            "Item": "Desc"
+            "Item": [
+                "Desc",
+                3910
+            ]
+        }
+    },
+    "robin.dahl@elev.ga.ntig.se": {
+        "username": "Robin Dahl",
+        "password": "1234",
+        "list": {
+            "Do the deed": [
+                "kill th",
+                2442
+            ],
+            "fgh": [
+                "fvgh",
+                1001
+            ],
+            "da": [
+                "d",
+                2404
+            ],
+            "dad": [
+                "dasd",
+                8662
+            ],
+            "dasd": [
+                "dasd",
+                821
+            ],
+            "dwad": [
+                "dwad",
+                7887
+            ]
         }
     }
 }

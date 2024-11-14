@@ -1,0 +1,73 @@
+html
+{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+body
+{
+    background-color: #000080;
+}
+
+#footer{
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 9em;
+    background-color: #1434A4;
+    text-align: center;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: goldenrod;
+}
+
+
+h1, h2, p, nav
+{
+    text-align: center;
+    color: white;
+}
+
+nav
+{
+    border-style: solid;
+    border-radius: 5px;
+    border-color: goldenrod;
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 10px 16px;
+    background-color: #1434A4;
+    
+    position: sticky;
+
+    width: 100%;
+    height: 2em;
+}
+
+nav a
+{
+    text-align: center;
+    margin: auto;
+}
+a, #crown
+{
+    color: gold;
+}
+
+input
+{
+    background-color: #1434A4;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: goldenrod;
+    color: white;
+}
+
+#grow a:hover
+{
+    font-size: 20px;
+    font-size-adjust: 2px;
+}
