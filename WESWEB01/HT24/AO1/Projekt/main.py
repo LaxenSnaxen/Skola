@@ -85,6 +85,10 @@ def register():
         
         with open('data.json', 'r') as openFile:
             file = json.load(openFile)
+            print (file)
+
+            if email in file:
+                return ("Email already in use.")
 
             id = (random.randint(0,9999))
             while id in file:

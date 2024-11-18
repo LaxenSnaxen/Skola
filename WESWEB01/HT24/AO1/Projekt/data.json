@@ -1,27 +1,15 @@
 {
     "scooby.doo@mystery.com": {
-        "username": "Raggy",
+        "username": "Scooby",
         "password": "RaggyDoo123DoDo",
         "list": {
-            "Remember": [
-                "ride re rody",
-                7479
+            "Item": [
+                "Desc",
+                8720
             ],
-            "Rash raggy": [
-                "rash raggy, re's rery rirty",
-                8185
-            ],
-            "Do the deed": [
-                "Rill de prerident",
-                4736
-            ],
-            "Buy rorheries": [
-                "ret rom rooby racks",
-                8549
-            ],
-            "Ro wif re rang": [
-                "runt rom rhosts",
-                2882
+            "dad": [
+                "dade",
+                908
             ]
         }
     },
